@@ -18,16 +18,17 @@ class Driver {
      }
 
      passengers() {
-      store.trips.find(function(driverId) {
-           if (trip.driverId === driverId) {
-              return store.trips.passengers;
-            }
-          )}
-        }
-
-
+       return this.trips().map(trip => {
+              if (trip.driverId === this.id) {
+                 return trip.passengers;
+               }
+         })
+       }
 
 }
+
+
+
 
 let passengerId = 0;
 
